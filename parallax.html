@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Parallax Screensaver&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* { margin: 0; padding: 0; box-sizing: border-box; overflow: hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { background: black; height: 100vh; display: flex; align-items: center; justify-content: center; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.layer { position: absolute; width: 120%; height: 120%; background-size: cover; transition: transform 0.1s ease-out; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.layer1 { background: url('/mnt/data/foreground.png') no-repeat center/cover; z-index: 3; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.layer2 { background: url('/mnt/data/background_filled.png') no-repeat center/cover; z-index: 2; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="layer layer1"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="layer layer2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener("deviceorientation", (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let x = event.gamma / 10;<span class="Apple-converted-space">  </span>// Neigung links/rechts</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let y = event.beta / 10; <span class="Apple-converted-space">  </span>// Neigung vor/zurück</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelector(".layer1").style.transform = `translate(${x * 10}px, ${y * 10}px)`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelector(".layer2").style.transform = `translate(${x * 5}px, ${y * 5}px)`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
